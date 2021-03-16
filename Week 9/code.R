@@ -23,4 +23,6 @@ scale_x_date(date_labels = "%Y %b",limits = c(as.Date("2010-01-01"), as.Date("20
       fill = NA,
       size = 0.5
     )
-  ) + ylab("Median Weekly Earn  (dollars)") + xlab("Time")
+  ) + ylab("Median Weekly Earn  (dollars)") + xlab("Time")+ 
+labs(title = "Changes in Median Weekly Earning of 55+ Workers over Years", 
+     caption = "@shiduopili\nData Source: BLS") 
