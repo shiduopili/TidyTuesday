@@ -10,8 +10,15 @@ library(gridExtra)
 library(stringr)
 library(scales)
 
-#define ui
+games <-
+  readr::read_csv(
+    'https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-03-16/games.csv'
+  )
+games <-
+  games %>% mutate(date = ym(paste(year, month, sep = " ")))  %>% mutate(avg_peak_perc =
+                                                                           as.numeric(str_sub(avg_peak_perc, end = -2))) 
 
+#define ui
 ui <- fluidPage(
   theme = shinytheme("cyborg"),
   #Application title
